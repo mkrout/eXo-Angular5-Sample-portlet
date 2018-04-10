@@ -1,0 +1,19 @@
+<div class="info">
+<h3>Platform information</h3>
+
+<ul *ngIf="info!=null">
+	<li><strong>Current RepoName:</strong> {{info.currentRepoName}}</li>
+    <li><strong>Date Of Key Generation:</strong> {{info.dateOfKeyGeneration}}</li> 
+	<li><strong>Default WorkSpace Name:</strong> {{info.defaultWorkSpaceName}}</li>
+	<li><strong>Duration:</strong> {{info.duration}}</li>
+	<li><strong>Is Mobile Compliant:</strong> {{info.isMobileCompliant}}</li>
+	<li><strong>Number of Users:</strong> {{info.nbUsers}}</li>
+	<li><strong>PlatformBuildNumber:</strong> {{info.platformBuildNumber}},</li>
+	<li><strong>PlatformEdition:</strong> {{info.platformEdition}}</li>
+	<li><strong>PlatformRevision:</strong> {{info.platformRevision}}</li>
+	<li><strong>PlatformVersion:</strong> {{info.platformVersion}}</li>
+	<li><strong>RunningProfile:</strong> {{info.runningProfile}}</li>
+</ul>
+</div>
+
+<div *ngIf="errorMessage"> {{errorMessage}} </div>
