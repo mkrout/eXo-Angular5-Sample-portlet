@@ -1,8 +1,8 @@
 export class Info {
 
-    buildNumber: string;
+  buildNumber: string;
 	currentRepoName: string;
-    dateOfKeyGeneration: string;
+  dateOfKeyGeneration: string;
 	defaultWorkSpaceName: string;
 	duration: string;
 	isMobileCompliant:string;
@@ -12,6 +12,6 @@ export class Info {
 	platformRevision: string;
 	platformVersion: string;
 	runningProfile: string;
-   constructor() { 
+  constructor() {
    }
 }
