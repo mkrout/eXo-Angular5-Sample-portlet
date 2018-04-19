@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { ObservableComponent }  from './observable.component';
 import { InfoService } from './info.service';
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
-  imports: [     
+  imports: [
         BrowserModule,
-		HttpModule
+		HttpModule,
+LoadingModule
   ],
   declarations: [
         AppComponent,
@@ -22,4 +24,6 @@ import { InfoService } from './info.service';
         AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule { 
+      
+}

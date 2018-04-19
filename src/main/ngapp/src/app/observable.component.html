@@ -1,9 +1,10 @@
 <div class="info">
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+<input type="button" (click)="clickButton()">
 <h3>Platform information</h3>
-
 <ul *ngIf="info!=null">
 	<li><strong>Current RepoName:</strong> {{info.currentRepoName}}</li>
-    <li><strong>Date Of Key Generation:</strong> {{info.dateOfKeyGeneration}}</li> 
+    <li><strong>Date Of Key Generation:</strong> {{info.dateOfKeyGeneration}}</li>
 	<li><strong>Default WorkSpace Name:</strong> {{info.defaultWorkSpaceName}}</li>
 	<li><strong>Duration:</strong> {{info.duration}}</li>
 	<li><strong>Is Mobile Compliant:</strong> {{info.isMobileCompliant}}</li>
