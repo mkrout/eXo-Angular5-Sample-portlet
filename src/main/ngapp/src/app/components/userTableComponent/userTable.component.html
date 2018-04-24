@@ -1,0 +1,53 @@
+<div class="example-container mat-elevation-z8">
+
+        <div class="example-header">
+                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </div>
+            
+        <mat-table #table [dataSource]="dataSource">
+          <!-- Login Column -->
+          <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef> Login </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.userName}} </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef> First name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+          </ng-container>
+      
+          <!-- Last Name Column -->
+          <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+          </ng-container>
+      
+          <!-- Password Column -->
+          <ng-container matColumnDef="password">
+            <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+           </ng-container>          
+          
+          <!-- Groups Column -->
+          <ng-container matColumnDef="groups">
+                <mat-header-cell *matHeaderCellDef> Groups </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.groups}} </mat-cell>
+           </ng-container>
+
+           <!-- Spaces Column -->
+           <ng-container matColumnDef="spaces">
+                <mat-header-cell *matHeaderCellDef> Spaces </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.spaces}} </mat-cell>
+            </ng-container>      
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>

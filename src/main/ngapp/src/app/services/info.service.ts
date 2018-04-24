@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+// tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -9,7 +10,7 @@ import { Info } from './info';
 
 @Injectable()
 export class InfoService {
-    url = "http://localhost:8080/rest/platform/info/";
+    url = 'http://localhost:8080/rest/platform/info/';
     constructor(private http: Http) { }
     getInfosWithObservable(): Observable<Info> {
         return this.http.get(this.url)
