@@ -1,3 +1,4 @@
+import { UserTableComponent } from './../components/userTableComponent/userTable.component';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user.model';
 
@@ -7,19 +8,13 @@ import { User } from '../model/user.model';
  */
 @Injectable()
 export class ScvToJsonService {
-  private elements: any;
 
    constructor() {}
 
-  public getElements() {
-    return this.elements;
-  }
 
-  public setElements(elements: any) {
-    this.elements = elements;
-  }
-  convertFile(input): any {
+  convertFile(input): User[] {
     const reader = new FileReader();
+    const lines = [];
     reader.onload = () => {
       const text = reader.result;
      // console.log('CSV: ', text.substring(0, 100) + '...');
@@ -29,7 +24,6 @@ export class ScvToJsonService {
       const csv: string = reader.result;
       const allTextLines = csv.split(/\r|\n|\r/);
       const headers = allTextLines[0].split(',');
-      const lines = [];
       for (let i = 1; i < allTextLines.length; i++) {
       // split content based on comma
       const data = allTextLines[i].split(',');
@@ -39,10 +33,9 @@ export class ScvToJsonService {
       lines.push(user);
       }
       }
-
-      this.setElements(lines);
-      return lines;
   };
+  console.log(lines);
+  return lines;
 }
 
 }

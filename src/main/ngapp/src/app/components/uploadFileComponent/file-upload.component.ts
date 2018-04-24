@@ -1,4 +1,3 @@
-import { UserTableComponent } from './../userTableComponent/userTable.component';
 import { ScvToJsonService } from '../../services/scvToJson.service';
 import { Component, OnInit } from '@angular/core';
 import { DataSource} from '@angular/cdk/collections';
@@ -13,12 +12,11 @@ import {User} from '../../model/user.model';
 export class FileUploadComponent {
   constructor(private scvToJsonService: ScvToJsonService) {}
   selectedFile = null;
-  elements = null;
+  users = null;
   onFileSelected(event) {
     console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
-    this.elements = this.scvToJsonService.convertFile(this.selectedFile);
-    const userTable = new UserTableComponent().refresh(ELEMENT_DATA);
+    this.users = this.scvToJsonService.convertFile(this.selectedFile);
   }
 }
 
@@ -103,78 +101,6 @@ const ELEMENT_DATA: User[] = [
     email: "julian@exo.com",
     groups: "",
     spaces: "nps_space"
-  },
-  {
-    userName: "mark",
-    firstName: "Mark",
-    lastName: "Anthony",
-    password: "mark",
-    email: "mark@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "mary",
-    firstName: "Mary",
-    lastName: "Williams",
-    password: "mary",
-    email: "mary@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "michael",
-    firstName: "Michael",
-    lastName: "Andrew",
-    password: "michael",
-    email: "michael@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "robert",
-    firstName: "Robert",
-    lastName: "Bruce",
-    password: "robert",
-    email: "robert@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "sam",
-    firstName: "Sam",
-    lastName: "Harrison",
-    password: "sam",
-    email: "sam@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "sandy",
-    firstName: "Sandy",
-    lastName: "Anderson",
-    password: "sandy",
-    email: "sandy@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "tracy",
-    firstName: "Tracy",
-    lastName: "Cooper",
-    password: "tracy",
-    email: "tracy@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "nps_bot",
-    firstName: "NPS",
-    lastName: "Bot",
-    password: "nps_bot",
-    email: "nps_bot@exo.com",
-    groups: "",
-    spaces: ""
   }
 ];
 
