@@ -14,7 +14,6 @@ export class ScvToJsonService {
   lines = [];
   convertFile(input): User[] {
     const reader = new FileReader();
-    
     reader.onload = () => {
       const text = reader.result;
      // console.log('CSV: ', text.substring(0, 100) + '...');

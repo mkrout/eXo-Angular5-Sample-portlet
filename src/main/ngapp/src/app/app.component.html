@@ -1,6 +1,17 @@
 
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-  <input type="button" (click)="clickButton()">
+  
 <app-observable></app-observable>
-
+<div>
+  <h3>Bulk import of users:</h3>
+</div>
 <app-file-upload></app-file-upload>
+<app-user-table></app-user-table>
+
+<div style="padding: 10px">
+  <input type="checkbox" id="createusers" name="createusers" (ngModel)="createusers"> Create users with existing userName<br>
+  <input type="checkbox" id="addusers" name="addusers"  (ngModel)="addusers"> Add existing users to the Groups and Spaces<br>
+</div>
+<div class="uiToolbar uiGrayLightBox">
+<input type="button" id="uploadusers" class="btn btn-primary" value="Import" (click)="importUsers()"/>
+</div>

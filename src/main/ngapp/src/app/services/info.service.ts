@@ -26,8 +26,4 @@ export class InfoService {
         console.error(error.message || error);
         return Observable.throw(error.message || error);
     }
-    private handleErrorPromise (error: Response | any) {
-        console.error(error.message || error);
-        return Promise.reject(error.message || error);
-    }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import {MatTableDataSource} from '@angular/material';
 import { User } from '../../model/user.model';
+import { ScvToJsonService } from '../../services/scvToJson.service';
 
 @Component({
   selector: 'app-user-table',
@@ -9,13 +10,9 @@ import { User } from '../../model/user.model';
 })
 
 export class UserTableComponent  {
-  constructor() {
+  constructor(private scvToJsonService: ScvToJsonService) {
   }
-  users = null;
-
-  display(elements: User[]) {
-    this.users = elements;
-  }
+  users = this.scvToJsonService.lines;
 }
 
 
