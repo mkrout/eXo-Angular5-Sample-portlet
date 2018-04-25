@@ -16,7 +16,8 @@ export class FileUploadComponent {
   onFileSelected(event) {
     console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
-    this.users = this.scvToJsonService.convertFile(this.selectedFile);
+    this.scvToJsonService.convertFile(this.selectedFile);
+    this.users = this.scvToJsonService.lines;
   }
 }
 

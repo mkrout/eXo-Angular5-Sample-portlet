@@ -11,10 +11,10 @@ export class ScvToJsonService {
 
    constructor() {}
 
-
+  lines = [];
   convertFile(input): User[] {
     const reader = new FileReader();
-    const lines = [];
+    
     reader.onload = () => {
       const text = reader.result;
      // console.log('CSV: ', text.substring(0, 100) + '...');
@@ -30,12 +30,12 @@ export class ScvToJsonService {
       if (data.length === headers.length) {
       const user = new User(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
 
-      lines.push(user);
+      this.lines.push(user);
       }
       }
   };
-  console.log(lines);
-  return lines;
+  console.log(this.lines);
+  return this.lines;
 }
 
 }
