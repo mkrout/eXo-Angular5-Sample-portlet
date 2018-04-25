@@ -24,8 +24,7 @@ import { UserTableComponent } from './components/userTableComponent/userTable.co
   declarations: [
             AppComponent,
             ObservableComponent,
-            FileUploadComponent,
-            UserTableComponent
+            FileUploadComponent
   ],
   providers: [
         InfoService,

@@ -3,6 +3,7 @@ import { ScvToJsonService } from '../../services/scvToJson.service';
 import { Component, OnInit } from '@angular/core';
 import { DataSource} from '@angular/cdk/collections';
 import {User} from '../../model/user.model';
+import {MatTableDataSource} from '@angular/material';
 
 
 @Component({
@@ -13,13 +14,27 @@ import {User} from '../../model/user.model';
 export class FileUploadComponent {
   constructor(private scvToJsonService: ScvToJsonService) {}
   selectedFile = null;
-  elements = null;
+
+  displayedColumns = ['userName', 'firstName', 'lastName', 'password', 'email', 'groups', 'spaces'];
+  dataSource = null;
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
+  }
+
   onFileSelected(event) {
     console.log(event.target.files[0]);
     this.selectedFile = event.target.files[0];
-    this.elements = this.scvToJsonService.convertFile(this.selectedFile);
-    const userTable = new UserTableComponent().refresh(ELEMENT_DATA);
+    const test: User[] = this.scvToJsonService.convertFile(this.selectedFile);
+    console.log(test);
+    console.log(typeof test);
+    console.log(ELEMENT_DATA);
+    console.log(typeof ELEMENT_DATA);
+    this.dataSource = new MatTableDataSource(test);
   }
+
+
 }
 
 const ELEMENT_DATA: User[] = [
@@ -157,24 +172,6 @@ const ELEMENT_DATA: User[] = [
     email: "sandy@exo.com",
     groups: "",
     spaces: "nps_space"
-  },
-  {
-    userName: "tracy",
-    firstName: "Tracy",
-    lastName: "Cooper",
-    password: "tracy",
-    email: "tracy@exo.com",
-    groups: "",
-    spaces: "nps_space"
-  },
-  {
-    userName: "nps_bot",
-    firstName: "NPS",
-    lastName: "Bot",
-    password: "nps_bot",
-    email: "nps_bot@exo.com",
-    groups: "",
-    spaces: ""
   }
 ];
 

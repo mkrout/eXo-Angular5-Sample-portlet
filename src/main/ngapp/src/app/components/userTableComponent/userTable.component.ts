@@ -14,18 +14,12 @@ export class UserTableComponent  {
   constructor() {
   }
   displayedColumns = ['userName', 'firstName', 'lastName', 'password', 'email', 'groups', 'spaces'];
-  dataSource = new MatTableDataSource();
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
-  }
-
-  refresh(elements: User[]) {
-    // tslint:disable-next-line:no-unused-expression
-    console.log(elements);
-    this.dataSource.data.push(ELEMENT_DATA);
   }
 }
 
