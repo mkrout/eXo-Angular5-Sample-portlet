@@ -1,0 +1,27 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-family: Helvetica,arial,sans-serif;
+  font-weight: normal;
+  color: #578dc9;
+  border: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  display: inline-block;
+
+}
+
+
+
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}

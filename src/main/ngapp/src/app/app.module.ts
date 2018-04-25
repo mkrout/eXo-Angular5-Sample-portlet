@@ -12,13 +12,15 @@ import { FileUploadComponent} from './components/uploadFileComponent/file-upload
 import {ScvToJsonService} from './services/scvToJson.service';
 import { UserTableComponent } from './components/userTableComponent/userTable.component';
 import { ImportUsersService } from './services/importUsers.service';
+import { FileDropModule } from 'ngx-file-drop';
 
 
 @NgModule({
   imports: [
             BrowserModule,
             HttpModule,
-            LoadingModule
+            LoadingModule,
+            FileDropModule
   ],
   declarations: [
             AppComponent,
